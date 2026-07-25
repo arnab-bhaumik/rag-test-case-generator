@@ -1,0 +1,39 @@
+# Core
+python-dotenv==1.0.1
+pydantic==2.9.2
+
+# Vector store + embeddings
+# NOTE: pinned to >= this floor, not an exact version — chromadb 0.5.x has no
+# prebuilt wheels for very new Python releases (e.g. 3.14) and fails to build
+# from source without a Rust/MSVC toolchain. Let pip resolve the latest.
+# Embeddings use Chroma's built-in default embedding function (ONNX MiniLM-L6-v2,
+# see src/embeddings/embedder.py) — no standalone sentence-transformers install needed.
+chromadb>=1.5.9
+
+# LLM providers
+groq==0.13.0
+anthropic==0.40.0
+tenacity==9.1.4  # retry/backoff for LLM + Jira calls; already pulled in transitively by chromadb, pinned explicitly since llm_client.py/jira_client.py now import it directly
+
+# Jira
+jira==3.8.0
+requests==2.32.3
+
+# Doc/PDF parsing
+# NOTE: doc_parser.py uses pdfplumber + python-docx directly, not `unstructured` —
+# simpler and no heavy extra deps. Revisit unstructured only if OCR (scanned PDFs)
+# or complex table extraction is actually needed (see plan.md §3).
+pdfplumber==0.11.10
+python-docx==1.2.0
+
+# API (frontend is a separate React app — see frontend/)
+fastapi==0.139.2
+uvicorn==0.51.0
+python-multipart==0.0.32  # required by FastAPI's Form()/File() (POST /runs, /library/import)
+
+# Excel export
+openpyxl==3.1.5
+
+# Testing
+pytest==9.1.1
+httpx==0.28.1  # already pulled in transitively by chromadb; pinned explicitly since tests import it directly

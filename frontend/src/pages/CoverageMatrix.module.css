@@ -1,0 +1,152 @@
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--radius-card-sm);
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.bannerOk {
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success-text-strong);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.bannerGap {
+  background: var(--warning-bg-2);
+  border: 1px solid var(--warning-border);
+}
+
+.bannerGapText {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--warning-text);
+  flex: 1;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.searchInput {
+  flex: 1 1 200px;
+  min-width: 120px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control-sm);
+  padding: 7px 10px;
+  background: var(--bg-input);
+}
+
+.filterGroup {
+  display: flex;
+  gap: 6px;
+}
+
+.filterBtn {
+  font-size: 12.5px;
+  font-weight: 600;
+  border-radius: var(--radius-control-sm);
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+}
+
+.filterBtnActive {
+  background: var(--brand);
+  color: var(--bg-white);
+  border-color: var(--brand);
+}
+
+.headerRow {
+  display: grid;
+  grid-template-columns: 80px minmax(200px, 1.4fr) 1fr 130px;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 14px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 80px minmax(200px, 1.4fr) 1fr 130px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+}
+
+.rowUncovered {
+  background: var(--warning-bg-2);
+  border-color: var(--warning-border) !important;
+}
+
+.rowAc {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-body-2);
+}
+
+.rowReq {
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.4;
+}
+
+.linkedWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.linkedPill {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 2px 7px;
+  text-decoration: none;
+}
+
+.linkedNone {
+  font-size: 12.5px;
+  color: var(--text-disabled);
+}
+
+.coveredCell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 56px 24px;
+}

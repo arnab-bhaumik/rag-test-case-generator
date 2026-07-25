@@ -1,0 +1,212 @@
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.searchInput {
+  flex: 1 1 200px;
+  min-width: 120px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control-sm);
+  padding: 7px 10px;
+  background: var(--bg-input);
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control-sm);
+  padding: 6px 10px;
+  background: var(--bg-input);
+  appearance: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rowId {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-body-2);
+  flex-shrink: 0;
+}
+
+.rowTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-heading);
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rowMeta {
+  font-size: 11.5px;
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-card);
+  padding: 56px 24px;
+}
+
+/* Session grouping (Uploaded / Generated accordions) */
+
+.sectionHeading {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 4px 0 10px;
+}
+
+.sectionHeadingCount {
+  font-weight: 500;
+  color: var(--text-muted-2);
+}
+
+.sessionList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sessionCard {
+  overflow: hidden;
+  padding: 0;
+}
+
+.sessionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform 0.15s;
+}
+
+.chevronClosed {
+  transform: rotate(-90deg);
+}
+
+.sessionLabel {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.sessionMeta {
+  font-size: 12px;
+  color: var(--text-muted-2);
+}
+
+.sessionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 12px 12px;
+  border-top: 1px solid var(--border-lighter);
+  padding-top: 10px;
+}
+
+/* Individual test case rows, used both inside a session and in flat search results */
+
+.caseCard {
+  border: 1px solid var(--border-lighter);
+  border-radius: var(--radius-card-sm);
+  overflow: hidden;
+}
+
+.caseSummary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: var(--bg-white);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.sessionTag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--brand);
+  background: var(--brand-bg-soft);
+  border-radius: var(--radius-pill);
+  padding: 2px 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.caseDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px 14px 39px;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border-lighter);
+}
+
+.detailField {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.detailLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-faint);
+}
+
+.detailValue {
+  font-size: 13px;
+  color: var(--text-body-2);
+  white-space: pre-wrap;
+}
+
+.stepsList {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--text-body-2);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}

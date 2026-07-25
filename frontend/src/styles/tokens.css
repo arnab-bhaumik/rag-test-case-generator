@@ -1,0 +1,204 @@
+/* Design tokens extracted from UX Screen/*.dc.html (all 4 mockups share one
+   OKLCH-based system). Keep this file as the single source of truth —
+   components should reference var(--token), never inline oklch(). */
+
+:root {
+  /* Surfaces */
+  --bg-page: oklch(0.97 0.003 250);
+  --bg-white: oklch(1 0 0);
+  --bg-soft: oklch(0.965 0.004 250);
+  --bg-soft-2: oklch(0.93 0.004 250);
+  --bg-input: oklch(0.99 0.001 250);
+
+  /* Borders */
+  --border: oklch(0.87 0.006 250);
+  --border-light: oklch(0.92 0.004 250);
+  --border-lighter: oklch(0.94 0.003 250);
+
+  /* Text */
+  --text-heading: oklch(0.2 0.012 250);
+  --text-body: oklch(0.25 0.012 250);
+  --text-body-2: oklch(0.35 0.012 250);
+  --text-secondary: oklch(0.42 0.013 250);
+  --text-muted: oklch(0.48 0.014 250);
+  --text-muted-2: oklch(0.5 0.014 250);
+  --text-faint: oklch(0.58 0.012 250);
+  --text-disabled: oklch(0.62 0.012 250);
+
+  /* Brand */
+  --brand: oklch(0.55 0.19 258);
+  --brand-hover: oklch(0.5 0.19 258);
+  --brand-bg-soft: oklch(0.94 0.03 258);
+  --brand-bg-softer: oklch(0.95 0.025 258);
+
+  /* Success (approved / grounded / done) */
+  --success: oklch(0.6 0.14 145);
+  --success-icon: oklch(0.5 0.15 145);
+  --success-text: oklch(0.4 0.1 145);
+  --success-text-strong: oklch(0.35 0.13 145);
+  --success-bg: oklch(0.95 0.04 145);
+  --success-border: oklch(0.8 0.08 145);
+
+  /* Danger (rejected / error) */
+  --danger: oklch(0.55 0.21 25);
+  --danger-text: oklch(0.45 0.18 25);
+  --danger-text-2: oklch(0.4 0.02 25);
+  --danger-bg: oklch(0.98 0.012 25);
+  --danger-bg-2: oklch(0.96 0.025 25);
+  --danger-border: oklch(0.8 0.15 25);
+  --danger-border-2: oklch(0.85 0.06 25);
+
+  /* Warning (gaps / needs verification) */
+  --warning: oklch(0.5 0.15 55);
+  --warning-text: oklch(0.45 0.15 55);
+  --warning-text-2: oklch(0.45 0.13 55);
+  --warning-bg: oklch(0.95 0.05 55);
+  --warning-bg-2: oklch(0.96 0.04 55);
+  --warning-border: oklch(0.8 0.09 55);
+
+  /* Category dots — must match src/models/schemas.py's Category enum order */
+  --cat-positive: oklch(0.6 0.14 145);
+  --cat-negative: oklch(0.55 0.21 25);
+  --cat-boundary: oklch(0.75 0.14 85);
+  --cat-edge: oklch(0.55 0.19 258);
+  --cat-security: oklch(0.55 0.19 300);
+  --cat-integration: oklch(0.6 0.13 195);
+  --cat-data-validation: oklch(0.55 0.03 250);
+
+  /* Priority pills */
+  --priority-high-bg: oklch(0.95 0.04 25);
+  --priority-high-text: oklch(0.45 0.18 25);
+  --priority-medium-bg: oklch(0.94 0.06 85);
+  --priority-medium-text: oklch(0.45 0.12 85);
+  --priority-low-bg: oklch(0.94 0.01 250);
+  --priority-low-text: oklch(0.42 0.02 250);
+
+  /* Geometry */
+  --radius-card: 10px;
+  --radius-card-sm: 8px;
+  --radius-control: 7px;
+  --radius-control-sm: 6px;
+  --radius-pill: 100px;
+  --sidebar-width: 232px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px oklch(0.2 0.01 250 / 0.04);
+  --shadow-modal: 0 12px 32px oklch(0.15 0.01 250 / 0.25);
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  color: var(--text-body);
+}
+
+a {
+  color: var(--brand);
+}
+
+a:hover {
+  color: var(--brand-hover);
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+input[type='checkbox'] {
+  accent-color: var(--brand);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* Shared page/card patterns used by every screen (Screen N of 6 — Section eyebrow, card surface) */
+
+.page {
+  flex: 1;
+  min-width: 0;
+  padding: 40px 32px 96px;
+  box-sizing: border-box;
+}
+
+.pageEyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 6px;
+}
+
+.pageMeta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.textInput {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: var(--text-heading);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: 10px 12px;
+}
+
+.textInput:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: -1px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 6px;
+}

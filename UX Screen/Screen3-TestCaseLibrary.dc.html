@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: oklch(0.97 0.003 250); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: oklch(0.55 0.19 258); }
+    a:hover { color: oklch(0.5 0.19 258); }
+  </style>
+</helmet>
+
+<div style="display: flex; min-height: 100vh;">
+
+  <div style="width: 232px; flex-shrink: 0; background: oklch(1 0 0); border-right: 1px solid oklch(0.87 0.006 250); display: flex; flex-direction: column; padding: 20px 14px; box-sizing: border-box;">
+    <div style="display: flex; align-items: center; gap: 8px; padding: 4px 8px 20px;">
+      <div style="width: 22px; height: 22px; border-radius: 5px; background: oklch(0.55 0.19 258); flex-shrink: 0;"></div>
+      <span style="font-size: 14px; font-weight: 700; color: oklch(0.2 0.012 250);">QA Test Generator</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 2px;">
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; color: oklch(0.42 0.013 250); font-size: 13.5px; font-weight: 500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+        Generate
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; color: oklch(0.42 0.013 250); font-size: 13.5px; font-weight: 500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+        Review
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; background: oklch(0.94 0.03 258); color: oklch(0.55 0.19 258); font-size: 13.5px; font-weight: 600;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+        Coverage Matrix
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; color: oklch(0.42 0.013 250); font-size: 13.5px; font-weight: 500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        Export
+      </div>
+    </div>
+    <div style="margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; color: oklch(0.42 0.013 250); font-size: 13.5px; font-weight: 500;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+      Settings
+    </div>
+  </div>
+
+  <div style="flex: 1; min-width: 0; max-width: 1200px; padding: 40px 32px 96px; box-sizing: border-box;">
+
+    <div style="margin-bottom: 18px;">
+      <div style="font-size: 13px; font-weight: 600; color: oklch(0.55 0.19 258); letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 6px;">Screen 3 of 4 — Coverage / Traceability Matrix</div>
+      <h1 style="font-size: 24px; font-weight: 700; color: oklch(0.2 0.012 250); margin: 0 0 6px;">Coverage Matrix</h1>
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: oklch(0.48 0.014 250);">
+        <span style="font-family: 'JetBrains Mono', monospace; font-weight: 600; color: oklch(0.35 0.012 250);">PROJ-4821</span>
+        <span>·</span>
+        <span>Payments</span>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 8px; margin-bottom: 18px;">
+      <sc-for list="{{ demoTabs }}" as="tab" hint-placeholder-count="3">
+        <button onClick="{{ tab.select }}" style="font-size: 12.5px; font-weight: 600; color: {{ tab.color }}; background: {{ tab.bg }}; border: 1px solid {{ tab.border }}; border-radius: 6px; padding: 6px 12px; cursor: pointer;">{{ tab.label }}</button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ isFullyCovered }}">
+      <div style="display: flex; align-items: center; gap: 10px; background: oklch(0.95 0.04 145); border: 1px solid oklch(0.8 0.08 145); border-radius: 8px; padding: 12px 14px; margin-bottom: 18px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(0.45 0.14 145)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div style="font-size: 13.5px; font-weight: 700; color: oklch(0.35 0.13 145);">All requirements covered</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ hasGaps }}">
+      <div style="display: flex; align-items: center; gap: 10px; background: oklch(0.96 0.04 55); border: 1px solid oklch(0.8 0.09 55); border-radius: 8px; padding: 12px 14px; margin-bottom: 18px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(0.5 0.15 55)" stroke-width="2.2" style="flex-shrink: 0;"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <div style="font-size: 13.5px; font-weight: 700; color: oklch(0.45 0.15 55); flex: 1;">{{ gapCount }} requirements have no test coverage</div>
+        <a href="#" style="font-size: 12.5px; font-weight: 600;">Jump to gaps</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isEmptyState }}">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; background: oklch(1 0 0); border: 1px dashed oklch(0.8 0.006 250); border-radius: 10px; padding: 56px 24px;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="oklch(0.6 0.012 250)" stroke-width="1.8"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+        <div style="font-size: 15px; font-weight: 600; color: oklch(0.3 0.012 250);">No requirements decomposed yet</div>
+        <div style="font-size: 13px; color: oklch(0.5 0.014 250); max-width: 360px;">Run a generation from a Jira ticket or document to decompose requirements and build the coverage matrix.</div>
+        <a href="#" style="font-size: 13px; font-weight: 600; margin-top: 4px;">Start a generation run</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ notEmptyState }}">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; background: oklch(1 0 0); border: 1px solid oklch(0.87 0.006 250); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px;">
+        <input type="text" placeholder="Search requirement or test case ID…" style="flex: 1 1 200px; min-width: 120px; font-size: 13px; border: 1px solid oklch(0.87 0.006 250); border-radius: 6px; padding: 7px 10px; background: oklch(0.99 0.001 250); box-sizing: border-box;">
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: oklch(0.42 0.013 250); border: 1px solid oklch(0.87 0.006 250); border-radius: 6px; padding: 6px 10px; background: oklch(0.99 0.001 250);">
+          All modules
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.012 250)" stroke-width="2.4" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: oklch(0.42 0.013 250); border: 1px solid oklch(0.87 0.006 250); border-radius: 6px; padding: 6px 10px; background: oklch(0.99 0.001 250);">
+          Coverage: All
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.012 250)" stroke-width="2.4" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 80px minmax(200px, 1.4fr) 1fr 130px; align-items: center; gap: 12px; padding: 6px 14px; font-size: 11.5px; font-weight: 600; color: oklch(0.6 0.012 250); text-transform: uppercase; letter-spacing: 0.03em;">
+        <div>AC</div>
+        <div>Requirement / Condition</div>
+        <div>Linked Test Cases</div>
+        <div>Covered</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <sc-for list="{{ rows }}" as="row" hint-placeholder-count="6">
+          <div onClick="{{ row.jump }}" style="display: grid; grid-template-columns: 80px minmax(200px, 1.4fr) 1fr 130px; align-items: center; gap: 12px; background: {{ row.rowBg }}; border: 1px solid {{ row.rowBorder }}; border-radius: 8px; padding: 12px 14px; cursor: pointer;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 600; color: oklch(0.35 0.012 250);">{{ row.ac }}</div>
+            <div style="font-size: 13.5px; color: oklch(0.25 0.012 250); line-height: 1.4;">{{ row.requirement }}</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+              <sc-for list="{{ row.linked }}" as="tc" hint-placeholder-count="1">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 600; color: {{ tc.color }}; background: {{ tc.bg }}; border-radius: 5px; padding: 2px 7px;">{{ tc.label }}</span>
+              </sc-for>
+              <sc-if value="{{ row.noneLinked }}">
+                <span style="font-size: 12.5px; color: oklch(0.6 0.012 250);">— none —</span>
+              </sc-if>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: {{ row.coveredColor }};">
+              <sc-if value="{{ row.covered }}">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="oklch(0.5 0.15 145)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </sc-if>
+              <sc-if value="{{ row.uncovered }}">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="oklch(0.5 0.15 55)" stroke-width="2.4"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </sc-if>
+              {{ row.coveredLabel }}
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    demo: 'gaps',
+    requirements: [
+      { ac: 'AC-1', requirement: 'Payment succeeds with a valid saved card.', links: [{ label: 'TC-001', status: 'approved' }] },
+      { ac: 'AC-2', requirement: 'Payment is declined for an expired card.', links: [{ label: 'TC-002', status: 'unreviewed' }] },
+      { ac: 'AC-3', requirement: 'Billing zip code is validated on submit.', links: [{ label: 'TC-007', status: 'approved' }] },
+      { ac: 'AC-4', requirement: 'Order at the free-shipping threshold gets free shipping.', links: [{ label: 'TC-003', status: 'unreviewed' }] },
+      { ac: 'AC-5', requirement: 'Refund via webhook updates order status.', links: [] },
+      { ac: 'AC-6', requirement: 'Concurrent checkout on the last unit of stock resolves to one order.', links: [{ label: 'TC-004', status: 'unreviewed' }] },
+      { ac: 'AC-7', requirement: 'Gateway timeout triggers a single safe retry.', links: [{ label: 'TC-006', status: 'rejected' }] },
+      { ac: 'AC-8', requirement: 'Saved card list only shows masked digits.', links: [{ label: 'TC-009', status: 'approved' }] },
+      { ac: 'AC-9', requirement: 'Card token cannot be replayed across accounts.', links: [{ label: 'TC-005', status: 'unreviewed' }] }
+    ]
+  };
+
+  selectDemo(demo) { this.setState({ demo }); }
+
+  renderVals() {
+    const demo = this.state.demo;
+    const isEmptyState = demo === 'empty';
+    const reqs = isEmptyState ? [] : (demo === 'covered'
+      ? this.state.requirements.map(r => ({ ...r, links: r.links.length ? [{ label: r.links[0].label, status: 'approved' }] : [{ label: 'TC-0' + Math.floor(Math.random() * 90 + 10), status: 'approved' }] }))
+      : this.state.requirements);
+
+    const rows = reqs.map(r => {
+      const covered = r.links.some(l => l.status === 'approved');
+      return {
+        ac: r.ac,
+        requirement: r.requirement,
+        linked: r.links.map(l => ({
+          label: l.label,
+          color: l.status === 'approved' ? 'oklch(0.4 0.1 145)' : l.status === 'rejected' ? 'oklch(0.55 0.15 25)' : 'oklch(0.45 0.013 250)',
+          bg: l.status === 'approved' ? 'oklch(0.94 0.05 145)' : l.status === 'rejected' ? 'oklch(0.95 0.03 25)' : 'oklch(0.94 0.005 250)'
+        })),
+        noneLinked: r.links.length === 0,
+        covered,
+        uncovered: !covered,
+        coveredLabel: covered ? 'Covered' : 'Not covered',
+        coveredColor: covered ? 'oklch(0.4 0.1 145)' : 'oklch(0.45 0.13 55)',
+        rowBg: covered ? 'oklch(1 0 0)' : 'oklch(0.98 0.02 55)',
+        rowBorder: covered ? 'oklch(0.87 0.006 250)' : 'oklch(0.85 0.06 55)',
+        jump: () => {}
+      };
+    });
+
+    const gapCount = rows.filter(r => !r.covered).length;
+    const tabDefs = [
+      { key: 'covered', label: 'Demo: Fully covered' },
+      { key: 'gaps', label: 'Demo: Gaps present' },
+      { key: 'empty', label: 'Demo: Empty' }
+    ];
+    const demoTabs = tabDefs.map(t => ({
+      label: t.label,
+      select: () => this.selectDemo(t.key),
+      color: demo === t.key ? 'oklch(1 0 0)' : 'oklch(0.42 0.013 250)',
+      bg: demo === t.key ? 'oklch(0.55 0.19 258)' : 'oklch(1 0 0)',
+      border: demo === t.key ? 'oklch(0.55 0.19 258)' : 'oklch(0.87 0.006 250)'
+    }));
+
+    return {
+      demoTabs,
+      isEmptyState,
+      notEmptyState: !isEmptyState,
+      isFullyCovered: !isEmptyState && gapCount === 0,
+      hasGaps: !isEmptyState && gapCount > 0,
+      gapCount,
+      rows
+    };
+  }
+}
+</script>
+</body>
+</html>

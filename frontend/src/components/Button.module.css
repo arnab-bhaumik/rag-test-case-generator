@@ -1,0 +1,48 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: var(--radius-control);
+  padding: 9px 16px;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+.primary {
+  color: var(--bg-white);
+  background: var(--brand);
+}
+
+.primary:disabled {
+  color: var(--text-disabled);
+  background: var(--bg-soft-2);
+}
+
+.secondary {
+  color: var(--text-body-2);
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+}
+
+.secondary:disabled {
+  color: var(--text-disabled);
+}
+
+.danger {
+  color: var(--danger);
+  background: var(--bg-white);
+  border: 1px solid var(--danger-border);
+}
+
+.full {
+  width: 100%;
+  padding: 11px 0;
+}

@@ -1,0 +1,36 @@
+Test Case ID,Title,Preconditions,Steps,Expected Result,Module,Priority
+TC-101,Login with valid credentials,User has an active account,"Navigate to login page
+Enter valid username and password
+Click Login",User is redirected to the dashboard and a welcome message is shown,Auth,High
+TC-102,Login with incorrect password,User has an active account,"Navigate to login page
+Enter valid username and incorrect password
+Click Login","An ""Invalid username or password"" error is shown and the user stays on the login page",Auth,High
+TC-103,Password reset via email link,User has an active account with a verified email,"Click ""Forgot password""
+Enter the account email
+Submit the form
+Open the reset link from the email",A password reset form is shown and the user can set a new password,Auth,Medium
+TC-104,Account lockout after repeated failed logins,User has an active account,Attempt login with wrong password 5 times in a row,"The account is locked and a ""Too many attempts"" message is shown",Auth,High
+TC-105,Search returns relevant results for a valid query,Product catalog has indexed items,"Enter a known product name in the search box
+Submit the search",Matching products are shown ranked by relevance,Search,Medium
+TC-106,Search with no matching results,Product catalog has indexed items,"Enter a nonsense query with no matches
+Submit the search","A ""No results found"" message is shown with suggested categories",Search,Low
+TC-107,Search filters narrow results correctly,Product catalog has indexed items across categories,"Search for a broad term
+Apply a category filter
+Apply a price range filter",Only products matching all applied filters are shown,Search,Medium
+TC-108,Add item to cart from search results,User is logged in and viewing search results,"Click ""Add to cart"" on a search result",The item appears in the cart with quantity 1 and the cart count updates,Search,Medium
+TC-109,Checkout with a valid saved card,Account has a valid saved payment card and items in cart,"Proceed to checkout
+Select the saved card
+Confirm payment",Payment is authorized and an order confirmation is shown,Payments,High
+TC-110,Checkout blocked when cart is empty,Cart is empty,Navigate directly to the checkout page,User is redirected to the cart page with a message that the cart is empty,Payments,Medium
+TC-111,Apply a valid promo code at checkout,Cart has items and a valid unused promo code exists,"Enter the promo code at checkout
+Apply the code",The discount is applied and the order total updates correctly,Payments,Medium
+TC-112,Apply an expired promo code,Cart has items and an expired promo code exists,"Enter the expired promo code at checkout
+Apply the code","A ""This code has expired"" message is shown and no discount is applied",Payments,Low
+TC-113,Update profile display name,User is logged in,"Navigate to profile settings
+Change the display name
+Save changes",The new display name is saved and shown across the app,Profile,Low
+TC-114,Upload a profile picture,User is logged in,"Navigate to profile settings
+Upload a valid image file
+Save changes",The new profile picture is displayed immediately after saving,Profile,Low
+TC-115,Reject unsupported file type for profile picture,User is logged in,"Navigate to profile settings
+Attempt to upload a .txt file as a profile picture",An error message states only image files are supported and no upload occurs,Profile,Low

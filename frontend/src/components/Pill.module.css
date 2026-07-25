@@ -1,0 +1,35 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  padding: 2px 9px;
+  white-space: nowrap;
+}
+
+.success {
+  color: var(--success-text-strong);
+  background: var(--success-bg);
+}
+
+.danger {
+  color: var(--danger-text);
+  background: var(--danger-bg-2);
+}
+
+.warning {
+  color: var(--warning-text);
+  background: var(--warning-bg-2);
+}
+
+.neutral {
+  color: var(--text-secondary);
+  background: var(--bg-soft);
+}
+
+.brand {
+  color: var(--brand);
+  background: var(--brand-bg-soft);
+}

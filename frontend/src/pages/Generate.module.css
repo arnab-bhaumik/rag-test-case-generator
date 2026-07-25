@@ -1,0 +1,261 @@
+.wrap {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.formCard {
+  padding: 24px;
+  margin-top: 8px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 16px;
+}
+
+.tabs {
+  display: flex;
+  background: var(--bg-soft);
+  border-radius: 8px;
+  padding: 3px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted-2);
+  padding: 7px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.tabActive {
+  font-weight: 600;
+  color: var(--text-heading);
+  background: var(--bg-white);
+  box-shadow: 0 1px 2px oklch(0.2 0.01 250 / 0.08);
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.inputWrap {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.inputValid {
+  border-color: var(--success) !important;
+}
+
+.inputError {
+  border-color: var(--danger) !important;
+  background: var(--danger-bg) !important;
+}
+
+.errorText {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  color: var(--danger);
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: 10px 12px;
+  background: var(--bg-input);
+  color: var(--text-heading);
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+}
+
+.selectPlaceholder {
+  color: var(--text-disabled);
+  font-weight: 400;
+}
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius-card-sm);
+  padding: 22px 16px;
+  cursor: pointer;
+}
+
+.dropzoneError {
+  background: var(--danger-bg);
+  border-color: var(--danger);
+}
+
+.dropzoneOk {
+  border-color: var(--success);
+  background: var(--success-bg);
+}
+
+.footerLink {
+  text-align: center;
+  margin-top: 14px;
+}
+
+.footerLink a {
+  font-size: 12.5px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Step tracker */
+.steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.stepActive {
+  background: var(--brand-bg-softer);
+  margin: 0 -12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 7px;
+}
+
+.stepConnector {
+  width: 1px;
+  height: 14px;
+  background: oklch(0.85 0.008 250);
+  margin-left: 11px;
+}
+
+.stepDot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stepDotDone {
+  background: var(--success);
+  color: var(--bg-white);
+}
+
+.stepDotActive {
+  background: var(--brand);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.stepDotPending {
+  border: 1.5px solid oklch(0.85 0.008 250);
+}
+
+.stepDotInner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bg-white);
+}
+
+.stepName {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.stepNameActive {
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.stepNamePending {
+  color: var(--text-disabled);
+}
+
+.stepSub {
+  font-size: 12px;
+}
+
+.progressTrack {
+  width: 160px;
+  height: 4px;
+  border-radius: 2px;
+  background: oklch(0.85 0.008 250);
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--brand);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.errorBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--danger-bg-2);
+  border: 1px solid var(--danger-border-2);
+  border-radius: var(--radius-card-sm);
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.errorBannerTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--danger);
+}
+
+.errorBannerText {
+  font-size: 12.5px;
+  color: var(--danger-text-2);
+  margin-top: 2px;
+}
+
+.resultBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+  border-radius: var(--radius-card-sm);
+  padding: 14px;
+  margin-bottom: 16px;
+}

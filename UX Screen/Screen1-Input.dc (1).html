@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: oklch(0.97 0.003 250); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: oklch(0.55 0.19 258); }
+    a:hover { color: oklch(0.5 0.19 258); }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+  </style>
+</helmet>
+
+<div style="display: flex; min-height: 100vh;">
+
+  <div style="width: 232px; flex-shrink: 0; background: oklch(1 0 0); border-right: 1px solid oklch(0.87 0.006 250); display: flex; flex-direction: column; padding: 20px 14px; box-sizing: border-box;">
+    <div style="display: flex; align-items: center; gap: 8px; padding: 4px 8px 20px;">
+      <div style="width: 22px; height: 22px; border-radius: 5px; background: oklch(0.55 0.19 258); flex-shrink: 0;"></div>
+      <span style="font-size: 14px; font-weight: 700; color: oklch(0.2 0.012 250);">QA Test Generator</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 2px;">
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; background: oklch(0.94 0.03 258); color: oklch(0.55 0.19 258); font-size: 13.5px; font-weight: 600;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+        Generate
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; color: oklch(0.42 0.013 250); font-size: 13.5px; font-weight: 500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+        Review Queue
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; color: oklch(0.42 0.013 250); font-size: 13.5px; font-weight: 500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        Test Case Library
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; color: oklch(0.42 0.013 250); font-size: 13.5px; font-weight: 500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        Run History
+      </div>
+    </div>
+
+    <div style="margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; color: oklch(0.42 0.013 250); font-size: 13.5px; font-weight: 500;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+      Settings
+    </div>
+  </div>
+
+  <div style="flex: 1; max-width: 1400px; margin: 0 auto; padding: 48px 32px 96px;">
+
+  <div style="margin-bottom: 40px;">
+    <div style="font-size: 13px; font-weight: 600; color: oklch(0.55 0.19 258); letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 6px;">Screen 1 of 4 — Input / Trigger</div>
+    <h1 style="font-size: 26px; font-weight: 700; color: oklch(0.2 0.012 250); margin: 0 0 6px;">Start a Test Case Generation Run</h1>
+    <div style="font-size: 14px; color: oklch(0.48 0.014 250);">Static gallery — all 6 UI states shown side by side for review.</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 28px; align-items: start;">
+
+    <!-- STATE 1: Default / Empty -->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 11px; font-weight: 700; color: oklch(1 0 0); background: oklch(0.55 0.01 250); border-radius: 4px; padding: 2px 7px;">1</span>
+        <span style="font-size: 13px; font-weight: 600; color: oklch(0.35 0.012 250);">Default / Empty</span>
+      </div>
+      <div style="background: oklch(1 0 0); border: 1px solid oklch(0.87 0.006 250); border-radius: 10px; padding: 24px; box-shadow: 0 1px 2px oklch(0.2 0.01 250 / 0.04);">
+        <div style="font-size: 16px; font-weight: 600; color: oklch(0.2 0.012 250); margin-bottom: 16px;">New Generation Run</div>
+
+        <div style="display: flex; background: oklch(0.965 0.004 250); border-radius: 8px; padding: 3px; margin-bottom: 16px;">
+          <div style="flex: 1; text-align: center; font-size: 13px; font-weight: 600; color: oklch(0.2 0.012 250); background: oklch(1 0 0); border-radius: 6px; padding: 7px 0; box-shadow: 0 1px 2px oklch(0.2 0.01 250 / 0.08);">From Jira Ticket</div>
+          <div style="flex: 1; text-align: center; font-size: 13px; font-weight: 500; color: oklch(0.5 0.014 250); padding: 7px 0;">Upload Document</div>
+        </div>
+
+        <label style="font-size: 12px; font-weight: 600; color: oklch(0.48 0.014 250); display: block; margin-bottom: 6px;">Jira Ticket Key</label>
+        <input type="text" placeholder="e.g. PROJ-123" style="width: 100%; box-sizing: border-box; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: oklch(0.2 0.012 250); background: oklch(0.99 0.001 250); border: 1px solid oklch(0.87 0.006 250); border-radius: 7px; padding: 10px 12px; margin-bottom: 16px;">
+
+        <label style="font-size: 12px; font-weight: 600; color: oklch(0.48 0.014 250); display: block; margin-bottom: 6px;">Module <span style="font-weight: 400; color: oklch(0.62 0.012 250);">(optional)</span></label>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: oklch(0.62 0.012 250); border: 1px solid oklch(0.87 0.006 250); border-radius: 7px; padding: 10px 12px; margin-bottom: 20px; background: oklch(0.99 0.001 250);">
+          <span>Select module…</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.012 250)" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+
+        <button disabled style="width: 100%; font-size: 14px; font-weight: 600; color: oklch(0.62 0.012 250); background: oklch(0.93 0.004 250); border: 1px solid oklch(0.87 0.006 250); border-radius: 7px; padding: 11px 0; cursor: not-allowed;">Generate Test Cases</button>
+
+        <div style="text-align: center; margin-top: 14px;">
+          <a href="#" style="font-size: 12.5px; font-weight: 500; text-decoration: none;">View past generation runs</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATE 2: Valid input -->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 11px; font-weight: 700; color: oklch(1 0 0); background: oklch(0.6 0.14 145); border-radius: 4px; padding: 2px 7px;">2</span>
+        <span style="font-size: 13px; font-weight: 600; color: oklch(0.35 0.012 250);">Valid Input — button enabled</span>
+      </div>
+      <div style="background: oklch(1 0 0); border: 1px solid oklch(0.87 0.006 250); border-radius: 10px; padding: 24px; box-shadow: 0 1px 2px oklch(0.2 0.01 250 / 0.04);">
+        <div style="font-size: 16px; font-weight: 600; color: oklch(0.2 0.012 250); margin-bottom: 16px;">New Generation Run</div>
+
+        <div style="display: flex; background: oklch(0.965 0.004 250); border-radius: 8px; padding: 3px; margin-bottom: 16px;">
+          <div style="flex: 1; text-align: center; font-size: 13px; font-weight: 600; color: oklch(0.2 0.012 250); background: oklch(1 0 0); border-radius: 6px; padding: 7px 0; box-shadow: 0 1px 2px oklch(0.2 0.01 250 / 0.08);">From Jira Ticket</div>
+          <div style="flex: 1; text-align: center; font-size: 13px; font-weight: 500; color: oklch(0.5 0.014 250); padding: 7px 0;">Upload Document</div>
+        </div>
+
+        <label style="font-size: 12px; font-weight: 600; color: oklch(0.48 0.014 250); display: block; margin-bottom: 6px;">Jira Ticket Key</label>
+        <div style="position: relative; margin-bottom: 16px;">
+          <input type="text" value="PROJ-4821" readonly style="width: 100%; box-sizing: border-box; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: oklch(0.2 0.012 250); background: oklch(0.99 0.001 250); border: 1.5px solid oklch(0.6 0.14 145); border-radius: 7px; padding: 10px 36px 10px 12px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.6 0.14 145)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+
+        <label style="font-size: 12px; font-weight: 600; color: oklch(0.48 0.014 250); display: block; margin-bottom: 6px;">Module <span style="font-weight: 400; color: oklch(0.62 0.012 250);">(optional)</span></label>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: oklch(0.2 0.012 250); font-weight: 500; border: 1px solid oklch(0.87 0.006 250); border-radius: 7px; padding: 10px 12px; margin-bottom: 20px; background: oklch(0.99 0.001 250);">
+          <span>Payments</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.012 250)" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+
+        <button style="width: 100%; font-size: 14px; font-weight: 600; color: oklch(1 0 0); background: oklch(0.55 0.19 258); border: none; border-radius: 7px; padding: 11px 0; cursor: pointer;">Generate Test Cases</button>
+
+        <div style="text-align: center; margin-top: 14px;">
+          <a href="#" style="font-size: 12.5px; font-weight: 500; text-decoration: none;">View past generation runs</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATE 3: Invalid Jira key -->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 11px; font-weight: 700; color: oklch(1 0 0); background: oklch(0.55 0.21 25); border-radius: 4px; padding: 2px 7px;">3</span>
+        <span style="font-size: 13px; font-weight: 600; color: oklch(0.35 0.012 250);">Invalid Jira Key</span>
+      </div>
+      <div style="background: oklch(1 0 0); border: 1px solid oklch(0.87 0.006 250); border-radius: 10px; padding: 24px; box-shadow: 0 1px 2px oklch(0.2 0.01 250 / 0.04);">
+        <div style="font-size: 16px; font-weight: 600; color: oklch(0.2 0.012 250); margin-bottom: 16px;">New Generation Run</div>
+
+        <div style="display: flex; background: oklch(0.965 0.004 250); border-radius: 8px; padding: 3px; margin-bottom: 16px;">
+          <div style="flex: 1; text-align: center; font-size: 13px; font-weight: 600; color: oklch(0.2 0.012 250); background: oklch(1 0 0); border-radius: 6px; padding: 7px 0; box-shadow: 0 1px 2px oklch(0.2 0.01 250 / 0.08);">From Jira Ticket</div>
+          <div style="flex: 1; text-align: center; font-size: 13px; font-weight: 500; color: oklch(0.5 0.014 250); padding: 7px 0;">Upload Document</div>
+        </div>
+
+        <label style="font-size: 12px; font-weight: 600; color: oklch(0.48 0.014 250); display: block; margin-bottom: 6px;">Jira Ticket Key</label>
+        <div style="position: relative; margin-bottom: 8px;">
+          <input type="text" value="PROJ-abc" readonly style="width: 100%; box-sizing: border-box; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: oklch(0.2 0.012 250); background: oklch(0.98 0.012 25); border: 1.5px solid oklch(0.55 0.21 25); border-radius: 7px; padding: 10px 36px 10px 12px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.21 25)" stroke-width="2.2" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        </div>
+        <div style="display: flex; align-items: center; gap: 5px; font-size: 12.5px; color: oklch(0.55 0.21 25); font-weight: 500; margin-bottom: 16px;">
+          <span>Invalid key format — expected PROJECT-123</span>
+        </div>
+
+        <label style="font-size: 12px; font-weight: 600; color: oklch(0.48 0.014 250); display: block; margin-bottom: 6px;">Module <span style="font-weight: 400; color: oklch(0.62 0.012 250);">(optional)</span></label>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: oklch(0.62 0.012 250); border: 1px solid oklch(0.87 0.006 250); border-radius: 7px; padding: 10px 12px; margin-bottom: 20px; background: oklch(0.99 0.001 250);">
+          <span>Select module…</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.012 250)" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+
+        <button disabled style="width: 100%; font-size: 14px; font-weight: 600; color: oklch(0.62 0.012 250); background: oklch(0.93 0.004 250); border: 1px solid oklch(0.87 0.006 250); border-radius: 7px; padding: 11px 0; cursor: not-allowed;">Generate Test Cases</button>
+
+        <div style="text-align: center; margin-top: 14px;">
+          <a href="#" style="font-size: 12.5px; font-weight: 500; text-decoration: none;">View past generation runs</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATE 4: Upload error -->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 11px; font-weight: 700; color: oklch(1 0 0); background: oklch(0.55 0.21 25); border-radius: 4px; padding: 2px 7px;">4</span>
+        <span style="font-size: 13px; font-weight: 600; color: oklch(0.35 0.012 250);">Upload Error</span>
+      </div>
+      <div style="background: oklch(1 0 0); border: 1px solid oklch(0.87 0.006 250); border-radius: 10px; padding: 24px; box-shadow: 0 1px 2px oklch(0.2 0.01 250 / 0.04);">
+        <div style="font-size: 16px; font-weight: 600; color: oklch(0.2 0.012 250); margin-bottom: 16px;">New Generation Run</div>
+
+        <div style="display: flex; background: oklch(0.965 0.004 250); border-radius: 8px; padding: 3px; margin-bottom: 16px;">
+          <div style="flex: 1; text-align: center; font-size: 13px; font-weight: 500; color: oklch(0.5 0.014 250); padding: 7px 0;">From Jira Ticket</div>
+          <div style="flex: 1; text-align: center; font-size: 13px; font-weight: 600; color: oklch(0.2 0.012 250); background: oklch(1 0 0); border-radius: 6px; padding: 7px 0; box-shadow: 0 1px 2px oklch(0.2 0.01 250 / 0.08);">Upload Document</div>
+        </div>
+
+        <label style="font-size: 12px; font-weight: 600; color: oklch(0.48 0.014 250); display: block; margin-bottom: 6px;">Document</label>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; background: oklch(0.98 0.012 25); border: 1.5px dashed oklch(0.55 0.21 25); border-radius: 8px; padding: 22px 16px; margin-bottom: 8px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.21 25)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+          <div style="font-size: 13px; font-weight: 600; color: oklch(0.55 0.21 25);">File type not supported</div>
+          <div style="font-size: 12px; color: oklch(0.45 0.02 25);">requirements.zip — accepted: PDF, DOCX</div>
+        </div>
+        <div style="font-size: 12.5px; color: oklch(0.55 0.21 25); font-weight: 500; margin-bottom: 16px;">Try again with a supported file type.</div>
+
+        <label style="font-size: 12px; font-weight: 600; color: oklch(0.48 0.014 250); display: block; margin-bottom: 6px;">Module <span style="font-weight: 400; color: oklch(0.62 0.012 250);">(optional)</span></label>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: oklch(0.62 0.012 250); border: 1px solid oklch(0.87 0.006 250); border-radius: 7px; padding: 10px 12px; margin-bottom: 20px; background: oklch(0.99 0.001 250);">
+          <span>Select module…</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.012 250)" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+
+        <button disabled style="width: 100%; font-size: 14px; font-weight: 600; color: oklch(0.62 0.012 250); background: oklch(0.93 0.004 250); border: 1px solid oklch(0.87 0.006 250); border-radius: 7px; padding: 11px 0; cursor: not-allowed;">Generate Test Cases</button>
+
+        <div style="text-align: center; margin-top: 14px;">
+          <a href="#" style="font-size: 12.5px; font-weight: 500; text-decoration: none;">View past generation runs</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATE 5: Generation in progress -->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 11px; font-weight: 700; color: oklch(1 0 0); background: oklch(0.55 0.19 258); border-radius: 4px; padding: 2px 7px;">5</span>
+        <span style="font-size: 13px; font-weight: 600; color: oklch(0.35 0.012 250);">Generation In Progress</span>
+      </div>
+      <div style="background: oklch(1 0 0); border: 1px solid oklch(0.87 0.006 250); border-radius: 10px; padding: 24px; box-shadow: 0 1px 2px oklch(0.2 0.01 250 / 0.04);">
+        <div style="font-size: 16px; font-weight: 600; color: oklch(0.2 0.012 250); margin-bottom: 4px;">New Generation Run</div>
+        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 18px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: oklch(0.48 0.014 250);">PROJ-4821</span>
+          <span style="font-size: 12px; color: oklch(0.62 0.012 250);">·</span>
+          <span style="font-size: 12.5px; color: oklch(0.48 0.014 250);">Payments</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 0;">
+            <div style="width: 22px; height: 22px; border-radius: 50%; background: oklch(0.6 0.14 145); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="oklch(1 0 0)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div>
+              <div style="font-size: 13.5px; font-weight: 600; color: oklch(0.2 0.012 250);">Decomposing requirement</div>
+              <div style="font-size: 12px; color: oklch(0.6 0.14 145);">Done</div>
+            </div>
+          </div>
+          <div style="width: 1px; height: 14px; background: oklch(0.85 0.008 250); margin-left: 11px;"></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 0;">
+            <div style="width: 22px; height: 22px; border-radius: 50%; background: oklch(0.6 0.14 145); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="oklch(1 0 0)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div>
+              <div style="font-size: 13.5px; font-weight: 600; color: oklch(0.2 0.012 250);">Retrieving related context</div>
+              <div style="font-size: 12px; color: oklch(0.6 0.14 145);">Done</div>
+            </div>
+          </div>
+          <div style="width: 1px; height: 14px; background: oklch(0.85 0.008 250); margin-left: 11px;"></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; background: oklch(0.95 0.025 258); margin: 0 -12px; padding-left: 12px; padding-right: 12px; border-radius: 7px;">
+            <div style="width: 22px; height: 22px; border-radius: 50%; background: oklch(0.55 0.19 258); display: flex; align-items: center; justify-content: center; flex-shrink: 0; animation: pulse 1.4s ease-in-out infinite;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: oklch(1 0 0);"></div>
+            </div>
+            <div>
+              <div style="font-size: 13.5px; font-weight: 700; color: oklch(0.55 0.19 258);">Generating test cases</div>
+              <div style="font-size: 12px; color: oklch(0.55 0.19 258);">In progress…</div>
+            </div>
+          </div>
+          <div style="width: 1px; height: 14px; background: oklch(0.85 0.008 250); margin-left: 11px;"></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 0;">
+            <div style="width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid oklch(0.85 0.008 250); flex-shrink: 0;"></div>
+            <div>
+              <div style="font-size: 13.5px; font-weight: 600; color: oklch(0.62 0.012 250);">Checking coverage</div>
+              <div style="font-size: 12px; color: oklch(0.68 0.012 250);">Waiting</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 16px;">
+          <a href="#" style="font-size: 12.5px; font-weight: 500; color: oklch(0.55 0.21 25); text-decoration: none;">Cancel run</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATE 6: Generation failed -->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 11px; font-weight: 700; color: oklch(1 0 0); background: oklch(0.55 0.21 25); border-radius: 4px; padding: 2px 7px;">6</span>
+        <span style="font-size: 13px; font-weight: 600; color: oklch(0.35 0.012 250);">Generation Failed</span>
+      </div>
+      <div style="background: oklch(1 0 0); border: 1px solid oklch(0.87 0.006 250); border-radius: 10px; padding: 24px; box-shadow: 0 1px 2px oklch(0.2 0.01 250 / 0.04);">
+        <div style="font-size: 16px; font-weight: 600; color: oklch(0.2 0.012 250); margin-bottom: 16px;">New Generation Run</div>
+
+        <div style="display: flex; align-items: flex-start; gap: 10px; background: oklch(0.96 0.025 25); border: 1px solid oklch(0.85 0.06 25); border-radius: 8px; padding: 12px 14px; margin-bottom: 18px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.21 25)" stroke-width="2.2" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          <div>
+            <div style="font-size: 13px; font-weight: 700; color: oklch(0.55 0.21 25);">Generation failed</div>
+            <div style="font-size: 12.5px; color: oklch(0.4 0.02 25); margin-top: 2px;">Retrieving related context timed out after 30s.</div>
+          </div>
+        </div>
+
+        <label style="font-size: 12px; font-weight: 600; color: oklch(0.48 0.014 250); display: block; margin-bottom: 6px;">Jira Ticket Key</label>
+        <div style="position: relative; margin-bottom: 16px;">
+          <input type="text" value="PROJ-4821" readonly style="width: 100%; box-sizing: border-box; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: oklch(0.2 0.012 250); background: oklch(0.99 0.001 250); border: 1px solid oklch(0.87 0.006 250); border-radius: 7px; padding: 10px 12px;">
+        </div>
+
+        <label style="font-size: 12px; font-weight: 600; color: oklch(0.48 0.014 250); display: block; margin-bottom: 6px;">Module <span style="font-weight: 400; color: oklch(0.62 0.012 250);">(optional)</span></label>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: oklch(0.2 0.012 250); font-weight: 500; border: 1px solid oklch(0.87 0.006 250); border-radius: 7px; padding: 10px 12px; margin-bottom: 20px; background: oklch(0.99 0.001 250);">
+          <span>Payments</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.012 250)" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+
+        <button style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 14px; font-weight: 600; color: oklch(1 0 0); background: oklch(0.55 0.21 25); border: none; border-radius: 7px; padding: 11px 0; cursor: pointer;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="oklch(1 0 0)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+          Retry
+        </button>
+
+        <div style="text-align: center; margin-top: 14px;">
+          <a href="#" style="font-size: 12.5px; font-weight: 500; text-decoration: none;">View past generation runs</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>
